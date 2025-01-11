@@ -1,3 +1,4 @@
+/* если вы это читаете, то не надо вдумывааться, я писал это в 6 утра */
 @font-face {
     font-family: 'TBJ Movage';
     src: url('fonts/movage.otf') format('otf');
@@ -8,7 +9,7 @@
 body {
     margin: 0;
     background-color: #212529;
-    font-family: 'TBJ Movage', sans-serif; /* Использовать шрифт */
+    font-family: 'TBJ Movage', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +30,7 @@ body {
 
 .label {
     color: #E9ECEF;
-    font-size: 2em; /* Увеличение размера для наглядности */
+    font-size: 2em; 
 }
 
 .links-label {
@@ -59,7 +60,7 @@ body {
 .links a {
     color: #495057;
     text-decoration: none;
-    font-size: 1em; /* Увеличение размера для наглядности */
+    font-size: 1em;
     transition: all 0.6s ease;
     display: block;
     padding: -3px;
@@ -67,7 +68,7 @@ body {
 
 .links a:hover {
     color: #ffffff;
-    font-size: 30em; /* Увеличение размера для наглядности */
+    font-size: 30em; 
 }
 
 @media (max-width: 600px) {
