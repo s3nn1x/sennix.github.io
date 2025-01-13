@@ -1,90 +1,176 @@
-/* если вы это читаете, то не надо вдумывааться, я писал это в 6 утра */
-@font-face {
-    font-family: 'TBJ Movage';
-    src: url('fonts/movage.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     margin: 0;
-    background-color: #212529;
-    font-family: 'TBJ Movage', sans-serif;
+    background-color: #000000;
+    color: #ffa4eb;
+    font-family: 'Lexend Zetta', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.gradient-lights {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 3s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.gradient-lights.show {
+    top: -55%;
+}
+
+.circle-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0b1cb, #5e548e, #9f86c0, #be95c4);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: rotateGradient 5s linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
+    padding-top: 10px;
+    z-index: 2;
+    position: relative;
+    flex-direction: column; 
 }
 
-.container {
-    width: 80%;
-    max-width: 600px;
-}
 
-.links-container {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    color: #E9ECEF;
+.text-container {
+    text-align: center;
 }
-
-.label {
-    color: #E9ECEF;
-    font-size: 2em; 
-}
-
-.links-label {
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.separator {
-    height: 60px;
-    width: 2px;
-    background-color: #E9ECEF;
-    margin-right: 10px;
-    display: inline-block;
-}
-
-.links {
+.links{
     list-style: none;
     padding: 0;
-    margin: 0;
-    flex-grow: 1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
 }
-
 .links li {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .links a {
-    color: #495057;
     text-decoration: none;
-    font-size: 1em;
-    transition: all 0.6s ease;
-    display: block;
-    padding: -3px;
+    color: #ffa4eb;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+    font-family: 'Lexend Zetta', sans-serif;
+}
+.links a:hover{
+   color: #ffffff;
+}
+.text {
+    font-size: 3rem;
+    margin: -10px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 1s ease;
 }
 
-.links a:hover {
-    color: #ffffff;
-    font-size: 30em; 
+.text.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@media (max-width: 600px) {
-    .links-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .links-label {
-        margin-bottom: 10px;
-        margin-right: 0;
-        text-align: center;
-    }
-    .separator {
-        width: 100%;
-        height: 2px;
-        margin-bottom: 10px;
-        margin-right: 0;
-    }
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.footer a img {
+    max-width: 100%;
+}
+/* стили для плеера*/
+.audio-player{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls {
+    display: flex;
+    align-items: center;
+}
+.play-pause {
+    background: none;
+    border: none;
+    color: #ffa4eb;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 0px;
+
+}
+
+.play-icon {
+    display: inline-block;
+}
+.pause-icon {
+    display: none;
+}
+.play-pause.playing .play-icon {
+    display: none;
+}
+.play-pause.playing .pause-icon {
+    display: inline-block;
+}
+
+#seek-slider {
+    width: 200px;
+    -webkit-appearance: none;
+    height: 10px;
+    background: #000000;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+#seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffa4eb;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#seek-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffa4eb;
+    cursor: pointer;
+    border-radius: 50%;
+}
+#seek-slider::-webkit-slider-runnable-track{
+    background: #ffa4eb;
+    border-radius: 10px;
+    height: 10px;
+}
+#seek-slider::-moz-range-track{
+    background: #ffa4eb;
+    border-radius: 10px;
+    height: 10px;
 }

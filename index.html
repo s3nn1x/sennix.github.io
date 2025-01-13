@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sennix links</title>
+    <title>sennix world</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
-    <div class="container">
-        <div class="links-container">
-            <div class="links-label">
-                <span class="label">my links</span>
-            </div>
-            <div class="separator"></div>
+    <div class="gradient-lights">
+        <div class="circle-gradient"></div>
+    </div>
+    <div class="content">
+        <div class="text-container">
+            <p class="text text-1">sennix world</p>
+            <p class="text text-2">here is my links ;)</p>
             <ul class="links">
-                <li><a href="https://open.spotify.com/user/314dl2fazi7h47ftlape44qyvlme?si=bb339d804cf44349">spotify</a></li>
-                <li><a href="https://t.me/sennix">telegram</a></li>
-                <li><a href="https://t.me/sennixhroniki">my chronicles</a></li>
+                 <li><a href="https://t.me/sennix">telegram</a></li>
+                <li><a href="https://www.donationalerts.com/r/sennix">support</a></li>
+                <li><a href="https://t.me/sennixhroniki">my channel</a></li>
             </ul>
         </div>
+         <div class="audio-player">
+            <audio id="audio" src="cup.mp3"></audio>
+            <div class="controls">
+                <button id="play-pause-btn" class="play-pause">
+                    <span class="play-icon">▶</span><span class="pause-icon">||</span>
+                </button>
+                 <input type="range" id="seek-slider" value="0" step="1" >
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+         <a href="https://media.tenor.com/eCvQxd3qdWAAAAAM/sf-dota.gif" target="енто я))">
+             <img src="https://media.tenor.com/eKrDiwZxyqEAAAAM/dota2.gif" alt="гифка">
+          </a>
     </div>
     <script src="script.js"></script>
 </body>
