@@ -51,21 +51,22 @@ body {
     padding-top: 10px;
     z-index: 2;
     position: relative;
-    flex-direction: column; 
+    flex-direction: column;
 }
-
 
 .text-container {
     text-align: center;
 }
-.links{
+
+.links {
     list-style: none;
     padding: 0;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
 }
+
 .links li {
     margin: 5px 0;
 }
@@ -77,9 +78,11 @@ body {
     transition: color 0.3s ease;
     font-family: 'Lexend Zetta', sans-serif;
 }
-.links a:hover{
-   color: #ffffff;
+
+.links a:hover {
+    color: #ffffff;
 }
+
 .text {
     font-size: 3rem;
     margin: -10px 0;
@@ -104,17 +107,20 @@ body {
 .footer a img {
     max-width: 100%;
 }
-/* стили для плеера*/
-.audio-player{
+
+
+.audio-player {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .controls {
     display: flex;
     align-items: center;
 }
+
 .play-pause {
     background: none;
     border: none;
@@ -123,18 +129,20 @@ body {
     cursor: pointer;
     margin-right: 10px;
     padding: 0px;
-
 }
 
 .play-icon {
     display: inline-block;
 }
+
 .pause-icon {
     display: none;
 }
+
 .play-pause.playing .play-icon {
     display: none;
 }
+
 .play-pause.playing .pause-icon {
     display: inline-block;
 }
@@ -146,7 +154,6 @@ body {
     background: #000000;
     outline: none;
     border-radius: 10px;
-
 }
 
 #seek-slider::-webkit-slider-thumb {
@@ -157,6 +164,7 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
+
 #seek-slider::-moz-range-thumb {
     width: 15px;
     height: 15px;
@@ -164,13 +172,53 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
-#seek-slider::-webkit-slider-runnable-track{
+
+#seek-slider::-webkit-slider-runnable-track {
     background: #ffa4eb;
     border-radius: 10px;
     height: 10px;
 }
-#seek-slider::-moz-range-track{
+
+#seek-slider::-moz-range-track {
     background: #ffa4eb;
     border-radius: 10px;
     height: 10px;
+}
+
+@media (max-width: 768px) {
+    .gradient-lights {
+      width: 500px;
+      height: 500px;
+        top: -100%;
+    }
+      .gradient-lights.show {
+        top: -55%; 
+      }
+   .links{
+       margin-top: 50px; 
+   }
+    .text {
+        font-size: 2rem;
+    }
+
+    #seek-slider {
+      width: 150px; 
+    }
+     .play-pause {
+       font-size: 1.5rem; 
+     }
+
+}
+@media (max-width: 480px){
+    .gradient-lights {
+        width: 300px;
+        height: 300px;
+        top: -50%; 
+    }
+     .gradient-lights.show {
+        top: -30%; 
+    }
+      .links{
+         margin-top: 30px; 
+   }
 }
